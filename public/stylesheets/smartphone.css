@@ -14,3 +14,10 @@ body, footer, input {
 	font-size: large;
 }
 
+img.author {
+	width: 128px;
+}
+
+video.author {
+	width: 95%;
+}

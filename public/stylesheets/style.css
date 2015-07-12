@@ -10,9 +10,10 @@ body {
 #page-wrap {
 	margin: 2% auto;
 	color: white;
+	height: auto;
 }
 
-#page-wrap > .main{
+#page-wrap  .main{
 	border: 1px solid #999; 
 	padding: 1%;
 	margin-bottom: 1px;

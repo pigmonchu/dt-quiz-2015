@@ -6,23 +6,27 @@ body {
 	content: "Wide layout";
 }
 
+#container {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;}
+
 nav { 
-	float: left; 
-	width: 15%;
-	height: 200px;
+	width: 20%;
 }
 
 nav span {
-	margin: 0px 100px 0px 0px;
+	margin: 0px 80% 0px 0px;
 }
  
 section {
-	float: right;
 	width: 80%;
-	height: 200px;
 }
 
 footer {
-	clear: both;
 	display: block;
+}
+
+video.author {
+	width: 95%;
 }
