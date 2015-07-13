@@ -49,3 +49,7 @@ span.respuesta {
 span.respuestaOK {
 	color: green;
 }
+
+form.buscar {
+	display: table;
+}
