@@ -21,7 +21,7 @@ console.log("host: "+host);
 var Sequelize = require('sequelize');
 
 var sequelize = new Sequelize(DB_name, user, pwd, {
-		dialect: protocol,
+		dialect: dialect,
 		protocol: protocol,
 		port: port,
 		host: host,
