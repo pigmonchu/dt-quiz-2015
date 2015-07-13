@@ -10,6 +10,14 @@ var port = (url[5] || null);
 var host = (url[4] || null);
 var storage = process.env.DATABASE_STORAGE;
 
+console.log("DB_name: "+DB_name);
+console.log("user: "+user);
+console.log("pwd: "+pwd);
+console.log("protocol: "+protocol);
+console.log("dialect: "+dialect);
+console.log("port: "+port);
+console.log("host: "+host);
+
 var Sequelize = require('sequelize');
 
 var sequelize = new Sequelize(DB_name, user, pwd, {
