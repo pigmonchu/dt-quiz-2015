@@ -38,8 +38,28 @@ sequelize.sync().then(function() {
 	Quiz.count().then(function(count){
 		if (count === 0) {
 			Quiz.create({
-					pregunta: 'Capital de la Italia',
-					respuesta: 'Rome'
+					pregunta: 'Capital de Italia',
+					respuesta: 'Roma'
+				});
+			Quiz.create({
+					pregunta: 'Capital de España',
+					respuesta: 'Madrid'
+				});
+			Quiz.create({
+					pregunta: 'Capital de Argentina',
+					respuesta: 'Buenos Aires'
+				});
+			Quiz.create({
+					pregunta: 'Capital de Brasil',
+					respuesta: 'Brasilia'
+				});
+			Quiz.create({
+					pregunta: 'Número de patas de un insecto',
+					respuesta: '6'
+				});
+			Quiz.create({
+					pregunta: 'Número de patas de una araña',
+					respuesta: '8'
 				})
 			.then(function(){console.log('Base de datos inicializada')});
 		};	

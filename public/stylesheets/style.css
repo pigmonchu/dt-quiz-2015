@@ -41,3 +41,11 @@ nav span {
 a {
   color: #00B7FF;
 }
+
+span.respuesta {
+	color: red;
+}
+
+span.respuestaOK {
+	color: green;
+}
