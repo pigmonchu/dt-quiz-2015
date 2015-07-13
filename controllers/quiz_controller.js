@@ -17,8 +17,10 @@ exports.show = function(req, res) {
 	res.render('quizes/show', {quiz: req.quiz});
 };
 
-exports.index = function(requ, res) {
-	models.Quiz.findAll().then(function(quizes) {
+exports.index = function(req, res) {
+		var wh = req.query.search ? "%"+req.query.search+"%" : "%";
+		wh = wh.replace(" ", "%");
+		models.Quiz.findAll({where:["pregunta like ?", wh]}).then(function(quizes) {
 		res.render('quizes/index', {quizes: quizes});
 	}).catch(function(error){nex(error)})
 }
@@ -36,4 +38,11 @@ exports.answer = function(req, res) {
 
 exports.author = function(req, res) {
 	res.render('author', {});
+}
+
+exports.search = function(req, res) {
+console.log("quizSrch: "+req.params.quizSrch);
+	models.Quiz.findAll().then(function(quizes) {
+		res.render('quizes/index', {quizes: quizes});
+	});
 }
