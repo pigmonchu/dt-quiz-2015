@@ -1,10 +1,16 @@
-<form class="buscar" method="get" action="/quizes">
-	<input type="text" name="search" placeholder="Texto en preguntas"/>
-	<input type="submit" value="Buscar"/>
+<form class="buscar " method="get" action="/quizes">
+	<input class="boton" type="text" name="search" placeholder="Texto en preguntas"/>
+	<input class="boton" type="submit" value="Filtrar"/>
 </form>
 <br>
 <table>
 	<% var i; for (i=0; i< quizes.length; i++ ) { %>
-		<tr><td><a href="quizes/<%= quizes[i].id %>"><%=quizes[i].pregunta %></a></td></tr>
+		<tr>
+			<td>&gtcc; <a href="quizes/<%= quizes[i].id %>"><%=quizes[i].pregunta %></a></td>
+			<td><a class="boton" href="quizes/<%= quizes[i].id %>/edit">Editar</a></td>
+		</tr>
 	<% } %>
 </table>
+<br>
+<a href="/quizes/new" class="boton buscar" >Crear pregunta</a>
+
