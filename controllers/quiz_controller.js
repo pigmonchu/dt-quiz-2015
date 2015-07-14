@@ -77,7 +77,7 @@ exports.update = function(req, res) {
 	.then(
 		function(err) {
 			if (err) {
-				res.render('quizes/edit', {quiz: quiz, errors: err.errors});
+				res.render('quizes/edit', {quiz: req.quiz, errors: err.errors});
 			} else {
 				req.quiz
 				.save ({fields: ["pregunta", "respuesta"]})
