@@ -22,7 +22,7 @@ exports.index = function(req, res) {
 		wh = wh.replace(" ", "%");
 		models.Quiz.findAll({where:["pregunta like ?", wh]}).then(function(quizes) {
 		res.render('quizes/index', {quizes: quizes, errors: []});
-	}).catch(function(error){nex(error)})
+	}).catch(function(error){next(error)})
 }
 
 exports.answer = function(req, res) {
