@@ -1,6 +1,14 @@
 <label for="preq" class="rem">Pregunta:</label>
-<input class="boton" type="text" id="preg" name="quiz[pregunta]" value="<%= quiz.pregunta %>"/></p>
+<input class="" type="text" id="preg" name="quiz[pregunta]" value="<%= quiz.pregunta %>"/></p>
 <label for="resp" class="rem">Respuesta:</label>
-<input class="boton" type="text" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>"/></p>
-<a class="boton" href="/quizes">Cancelar</a>
-<input class="boton" type="submit" value="Salvar">
+<input class="" type="text" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>"/></p>
+<label for="tema" class="rem">Tema:</label>
+<select name="quiz[tema]" class="">
+  <option value="otro" <%=quiz.tema === 'otro' ? 'selected' : '' %>>Otro</option>
+  <option value="humanidades" <%=quiz.tema === 'humanidades' ? 'selected' : '' %>>Humanidades</option>
+  <option value="ocio" <%=quiz.tema === 'ocio' ? 'selected' : '' %>>Ocio</option>
+  <option value="ciencia" <%=quiz.tema === 'ciencia' ? 'selected' : '' %>>Ciencia</option>
+  <option value="tecnologia" <%=quiz.tema === 'tecnologia' ? 'selected' : '' %>>Tecnología</option>
+</select></p>
+<button type="submit" class="boton aRight"  onClick="return alert(tema.value);"><i class="fa fa-floppy-o fa-lg"></i></button>
+<a class="boton aRight" href="/quizes"><i class="fa fa-undo fa-lg"></i></a>

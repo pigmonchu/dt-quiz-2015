@@ -1,13 +1,22 @@
 <form class="buscar " method="get" action="/quizes">
-	<input class="boton" type="text" name="search" placeholder="Texto en preguntas"/>
-	<input class="boton" type="submit" value="Filtrar"/>
+	<input class="" type="text" name="search" placeholder="Texto en preguntas"/>
+	<button type="submit" class="boton aRight"><i class="fa fa-search fa-lg"></i></button>
 </form>
 <br>
 <table>
 	<% var i; for (i=0; i< quizes.length; i++ ) { %>
 		<tr>
-			<td>&gtcc; <a href="quizes/<%= quizes[i].id %>"><%=quizes[i].pregunta %></a></td>
-			<td><a class="boton" href="quizes/<%= quizes[i].id %>/edit">Editar</a></td>
+			<td>
+			<i class="fa fa-<%= quizes[i].tema === 'humanidades' ? 'university' : quizes[i].tema === 'ciencia' ? 'flask' : quizes[i].tema === 'tecnologia' ? 'laptop' : quizes[i].tema === 'ocio' ? 'soccer-ball-o' : 'question' %>"></i>&nbsp;	 
+			<a href="quizes/<%= quizes[i].id %>"><%=quizes[i].pregunta %></a></td>
+			<td><a class="boton" href="quizes/<%= quizes[i].id %>/edit"><i class="fa fa-pencil fa-lg"></i></a></td>
+			<td>
+				<form class="borrar" method="post" action="../quizes/<%= quizes[i].id %>?_method=delete">
+					<button type="submit" class="" onClick="return confirm('Borrar: <%= quizes[i].pregunta %>');">
+						<i class="fa fa-trash-o fa-lg"></i>
+					</button>
+				</form>
+			</td>
 		</tr>
 	<% } %>
 </table>

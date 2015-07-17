@@ -54,20 +54,46 @@ span.respuestaOK {
 	display: table;
 }
 
-.boton {
-	border: 2px solid #00B7FF;
-	margin:10px 2px;
-	padding: 2px;
+button, .boton , input, select {
+	border: 1px solid #00B7FF;
 	background-color: white;
 	border-radius: 5px;
 	font-size: smaller;
+	padding: 5px;
+	color: #00B7FF;	
+}
+.boton, input, select {
+	margin:5px 2px;
+}
+
+select {
+	width: 137px;
+}
+button:hover, .boton:hover {
+	border-color: white;
+	background-color: #00B7FF;
+	color: white;
 }
 
 td {
 	text-align: left;
 }
 
+.borrar {
+	display: inline;	
+}
+
 #ErrorMsgs {
 	color: #f61; 
 	font-size: smaller;
+}
+
+.aRight {
+	display: block;
+	float:right;
+}
+.rem {
+	display: inline-block;
+	width: 80px;
+	text-align: right;
 }

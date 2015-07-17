@@ -39,27 +39,33 @@ sequelize.sync().then(function() {
 		if (count === 0) {
 			Quiz.create({
 					pregunta: 'Capital de Italia',
-					respuesta: 'Roma'
+					respuesta: 'Roma',
+					tema: "humanidades"
 				});
 			Quiz.create({
 					pregunta: 'Capital de España',
-					respuesta: 'Madrid'
+					respuesta: 'Madrid',
+					tema: "humanidades"
 				});
 			Quiz.create({
 					pregunta: 'Capital de Argentina',
-					respuesta: 'Buenos Aires'
+					respuesta: 'Buenos Aires',
+					tema: "humanidades"
 				});
 			Quiz.create({
 					pregunta: 'Capital de Brasil',
-					respuesta: 'Brasilia'
+					respuesta: 'Brasilia',
+					tema: "humanidades"
 				});
 			Quiz.create({
 					pregunta: 'Número de patas de un insecto',
-					respuesta: '6'
+					respuesta: '6',
+					tema: "ciencia"
 				});
 			Quiz.create({
 					pregunta: 'Número de patas de una araña',
-					respuesta: '8'
+					respuesta: '8',
+					tema: "ciencia"
 				})
 			.then(function(){console.log('Base de datos inicializada')});
 		};	
