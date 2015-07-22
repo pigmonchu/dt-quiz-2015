@@ -30,9 +30,8 @@ var sequelize = new Sequelize(DB_name, user, pwd, {
 	}
 );
 
+// Tabla Quiz
 var Quiz = sequelize.import(path.join(__dirname, 'quiz'));
-
-exports.Quiz = Quiz;
 
 sequelize.sync().then(function() {
 	Quiz.count().then(function(count){
@@ -71,3 +70,12 @@ sequelize.sync().then(function() {
 		};	
 	});
 });
+
+//Tabla Comment
+var Comment = sequelize.import(path.join(__dirname, 'comment'));
+
+Comment.belongsTo(Quiz);
+Quiz.hasMany(Comment);
+
+exports.Quiz = Quiz;
+exports.Comment = Comment;

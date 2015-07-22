@@ -1,5 +1,15 @@
     <form method="get" action="/quizes/<%= quiz.id %>/answer">
     	<strong>Pregunta</strong>: <%= quiz.pregunta %> <p>
-    	<input class="" type="text" name="respuesta" placeholder="Respuesta"/>
-		<button type="submit" class="boton"><i class="fa fa-check fa-lg"></i></button>
+		<button type="submit" class="boton aRight"><i class="fa fa-check fa-lg"></i></button>
+    	<input class="aRight" type="text" name="respuesta" placeholder="Respuesta"/>
 	</form>
+	<br/><br/>
+	<div class="comentarios">	
+		<p><a href="/quizes/<%= quiz.id %>/comments/new" class="aRight"><i class="fa fa-plus-square-o fa-lg"></i></a> <strong>Comentarios</strong></p>
+		<br/>
+		<ul>
+		<%for (index in quiz.Comments) { %>
+			<li><%=quiz.Comments[index].texto%></li>
+		<% } %>
+		</ul>
+	</div>

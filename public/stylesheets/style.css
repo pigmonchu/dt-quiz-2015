@@ -50,8 +50,11 @@ span.respuestaOK {
 	color: green;
 }
 
-.buscar {
-	display: table;
+.buscar, .comentarios, form {
+	display: table-cell;
+	text-align: left;
+	width: 90%;
+	margin: auto;
 }
 
 button, .boton , input, select {
