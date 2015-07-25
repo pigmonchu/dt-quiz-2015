@@ -10,10 +10,10 @@
 		<ul>
 		<%for (index in quiz.Comments) { %>
 			<%if (quiz.Comments[index].publicado || session.user) {%>
-			<li><%=quiz.Comments[index].texto%>
+			<li class="<%= quiz.Comments[index].publicado ? '' : 'noPublicado'%>"><%=quiz.Comments[index].texto%>
 				<%if (session.user && !quiz.Comments[index].publicado) {%>
-					<form method="post" action= "/quizes/<%=quiz.id%>/comments/<%=quiz.Comments[index].id%>/publish?_method=put">
-					<button type="submit" class="boton">Publicar</button>
+					<form class="lista" method="post" action= "/quizes/<%=quiz.id%>/comments/<%=quiz.Comments[index].id%>/publish?_method=put">
+					<button type="submit" class="aRight desnudo"><i class="fa fa-cloud-upload fa-lg"></i></button>
 					</form>
 				<% } %>
 			</li>

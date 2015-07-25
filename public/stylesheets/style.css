@@ -65,6 +65,13 @@ button, .boton , input, select {
 	padding: 5px;
 	color: #00B7FF;	
 }
+
+.desnudo {
+	border: none;
+	padding: 0px;
+	background-color: transparent;
+}
+
 .boton, input, select {
 	margin:5px 2px;
 }
@@ -95,8 +102,23 @@ td {
 	display: block;
 	float:right;
 }
+.aLeft {
+	display: block;
+	float:left;
+}
 .rem {
 	display: inline-block;
 	width: 80px;
 	text-align: right;
+}
+
+.lista {
+	display:inline;
+}
+
+.noPublicado::after {
+	content: "\f069";
+	font-family: "FontAwesome";
+	font-size: 0.9em;
+	color: orange;
 }
