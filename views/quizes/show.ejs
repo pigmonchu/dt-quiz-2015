@@ -21,3 +21,19 @@
 		<% } %>
 		</ul>
 	</div>
+	
+	
+	<% for(index in quiz.Comments){ %>
+	<p style="color:green;"><%= quiz.Comments[index].texto %>(<%= quiz.Comments[index].publicado %>)</p>
+	<% if(quiz.Comments[index].publicado==true){ %>
+		<p style="color:gold;"><%= quiz.Comments[index].texto %></p>
+	<% } else if(session.user) { %>
+		<p style="color:red;">
+			<%= quiz.Comments[index].texto %>
+			<a href="/quizes/<%= quiz.id %>/comments/<%= quiz.Comments[index].id %>/publish">
+				<button>Publicar</button>
+			</a>
+		</p>
+	<% } %>
+<% } %>
+
