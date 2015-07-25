@@ -7,11 +7,16 @@
     <link rel='stylesheet' type="text/css" href='/stylesheets/style.css' />
     <link rel='stylesheet' media="only screen and (min-width:530px) and (min-device-width:481px)" type="text/css" href='/stylesheets/wide.css' />
     <link rel='stylesheet' media="only screen and (max-width:480px)" type="text/css" href='/stylesheets/smartphone.css' />
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
   <body>
   	<div id="page-wrap">
   		<header class="main" id="h1">
+  		<% if(!session.user) {%>
+	  		<span class="aRight"><a href="/login"><i class="fa fa-sign-in fa-lg"></i> </a></span>
+  		<%} else {%>
+	  		<span class="aRight"><%=session.user.username%> <a href="/logout"><i class="fa fa-sign-out fa-lg"></i> </a></span>
+  		<%}%>
   			<h2>Quiz<span>: El juego de las preguntas</span></h2>
   		</header>
   		<div id="container">
