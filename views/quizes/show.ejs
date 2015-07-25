@@ -9,7 +9,15 @@
 		<br/>
 		<ul>
 		<%for (index in quiz.Comments) { %>
-			<li><%=quiz.Comments[index].texto%></li>
+			<%if (quiz.Comments[index].publicado || session.user) {%>
+			<li><%=quiz.Comments[index].texto%>
+				<%if (session.user && !quiz.Comments[index].publicado) {%>
+					<form method="post" action= "/quizes/<%=quiz.id%>/comments/<%=quiz.Comments[index].id%>/publish?_method=put">
+					<button type="submit" class="boton">Publicar</button>
+					</form>
+				<% } %>
+			</li>
+			<% } %>
 		<% } %>
 		</ul>
 	</div>
