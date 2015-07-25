@@ -9,6 +9,7 @@
 			<td>
 			<i class="fa fa-<%= quizes[i].tema === 'humanidades' ? 'university' : quizes[i].tema === 'ciencia' ? 'flask' : quizes[i].tema === 'tecnologia' ? 'laptop' : quizes[i].tema === 'ocio' ? 'soccer-ball-o' : 'question' %>"></i>&nbsp;	 
 			<a href="quizes/<%= quizes[i].id %>"><%=quizes[i].pregunta %></a></td>
+	<% 		if (session.user) { %>
 			<td><a class="boton" href="quizes/<%= quizes[i].id %>/edit"><i class="fa fa-pencil fa-lg"></i></a></td>
 			<td>
 				<form class="borrar" method="post" action="../quizes/<%= quizes[i].id %>?_method=delete">
@@ -17,9 +18,12 @@
 					</button>
 				</form>
 			</td>
+	<%		}%>
 		</tr>
 	<% } %>
 </table>
 <br>
+<% if (session.user) { %>
 <a href="/quizes/new" class="boton buscar" >Crear pregunta</a>
+<% }%>
 
