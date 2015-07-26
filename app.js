@@ -10,6 +10,7 @@ var session = require('express-session');
 var routes = require('./routes/index');
 
 var app = express();
+var inactivityTimeSession = 120000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,16 +24,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser('Quiz_2015'));
 app.use(session());
+
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(req, res, next){
-console.log(req.path);
 	if (!req.path.match(/\/login|\/logout/)) {
 		req.session.redir = req.path;
 	}
 	
 	res.locals.session = req.session;
+	res.locals.session.maxTime = inactivityTimeSession;
 	next();
 })
 
@@ -70,6 +72,5 @@ app.use(function(err, req, res, next) {
         errors: []
     });
 });
-
 
 module.exports = app;

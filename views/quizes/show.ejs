@@ -7,18 +7,18 @@
 	<div class="comentarios">	
 		<p><a href="/quizes/<%= quiz.id %>/comments/new" class="aRight"><i class="fa fa-plus-square-o fa-lg"></i></a> <strong>Comentarios</strong></p>
 		<br/>
-		<ul>
-		<%for (index in quiz.Comments) { %>
-			<%if (quiz.Comments[index].publicado || session.user) {%>
-			<li class="<%= quiz.Comments[index].publicado ? '' : 'noPublicado'%>"><%=quiz.Comments[index].texto%>
-				<%if (session.user && !quiz.Comments[index].publicado) {%>
-					<form class="lista" method="post" action= "/quizes/<%=quiz.id%>/comments/<%=quiz.Comments[index].id%>/publish?_method=put">
-					<button type="submit" class="aRight desnudo"><i class="fa fa-cloud-upload fa-lg"></i></button>
-					</form>
+		<form class="" method="post" action= "">
+			<ul>
+			<%for (index in quiz.Comments) { %>
+				<%if (quiz.Comments[index].publicado || session.user) {%>
+				<li class="<%= quiz.Comments[index].publicado ? '' : 'noPublicado'%>"><%=quiz.Comments[index].texto%>
+					<%if (session.user && !quiz.Comments[index].publicado) {%>
+						<button type="submit" class="aRight desnudo" formmethod="post" formaction="/quizes/<%=quiz.id%>/comments/<%=quiz.Comments[index].id%>/publish?_method=put"><i class="fa fa-cloud-upload fa-lg"></i></button>
+					<% } %>
+				</li>
 				<% } %>
-			</li>
 			<% } %>
-		<% } %>
-		</ul>
+			</ul>
+		</form>
 	</div>
 
